@@ -1,1 +1,11 @@
 Pillow
+numpy
+pandas
+json
+matplotlib
+nbimporter
+
+#Deep Learning
+tensorflow-gpu
+h5py
+cython
