@@ -1,7 +1,6 @@
 Pillow
 numpy
 pandas
-json
 matplotlib
 nbimporter
 
