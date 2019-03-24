@@ -1,10 +1,8 @@
+#image library
 Pillow
-numpy
-pandas
-matplotlib
+#importer from other notebooks
 nbimporter
 
-#Deep Learning
-tensorflow-gpu
+#to save and load weights for neural networks
 h5py
 cython
