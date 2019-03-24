@@ -1,3 +1,6 @@
+pandas
+scipy
+
 #image library
 Pillow
 #importer from other notebooks
