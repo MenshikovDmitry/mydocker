@@ -3,6 +3,8 @@ scipy
 
 #image library
 Pillow
+opencv-python
+
 #importer from other notebooks
 nbimporter
 
