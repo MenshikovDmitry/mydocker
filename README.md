@@ -1,4 +1,5 @@
 # mydocker
+# Tensorflow + NVidia GPU + Jupyter Notebook + Docker + Google Cloud
 
 ## Data Science docker container based on official tensorflow image. 
 I use it to run on Google Cloud Instance.
