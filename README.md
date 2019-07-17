@@ -37,10 +37,10 @@ Copy my docker file and other files
 Navigate to new directory, if needed, update __requirements.txt__ with your favourite text editor and build the image
 ```bash
 ~ $ cd mydocker/
-~/mydocker $ sudo build .
+~/mydocker $ sudo build -t tf_image .
 ```
 
-Building will take some time. If it finished with no errors, Docker will provide you with unique name of image kinf of __35nkwjtuw8hfi2__.
+Building will take some time. If it finished with no errors, we have a new docker image called __tf_image__.
 
 __now we are ready to run__
 
@@ -49,10 +49,10 @@ __now we are ready to run__
 
 3) Run container and assign a name __tf__ for it
 ```bash
-~/docker/ $ sudo docker run --runtime=nvidia -p 8888:8888 -v ~/notebooks:/tf/notebooks --name tf <unique name of image>
+~/docker/ $ sudo docker run --runtime=nvidia -p 8888:8888 -v ~/notebooks:/tf/notebooks --name tf tf_image
 ```
-4) If you are successfull, shell will report that jupyter notebook is running and it will provide you with a token. Copy it to clipboard
-5) run browser http://<external_ip>:8888 to open a Jupyter notebook .
+4) If you are successfull, shell will report that jupyter lab is running and it will provide you with a token. Copy it to clipboard
+5) run browser http://<external_ip>:8888 to open a Jupyter Lab. You can also use Jupyter notebook, as it is a part of the Lab.
 
 Use __Ctrl+C__ to stop container
 
