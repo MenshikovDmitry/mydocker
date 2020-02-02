@@ -20,7 +20,7 @@ It will show table with available GPUs
 4) install Nvidia-docker https://github.com/NVIDIA/nvidia-docker
 5) Test that GPU is visible from the docker
 ```bash
-~$ sudo docker --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi 
+~$ sudo docker run --runtime nvidia nvidia/cuda:9.0-base nvidia-smi
 ```
 
 You should see the same table as we saw at (2)
