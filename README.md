@@ -37,7 +37,7 @@ Copy my docker file and other files
 Navigate to new directory, if needed, update __requirements.txt__ with your favourite text editor and build the image
 ```bash
 ~ $ cd mydocker/
-~/mydocker $ sudo build -t tf_image .
+~/mydocker $ sudo docker build -t tf_image .
 ```
 
 Building will take some time. If it finished with no errors, we have a new docker image called __tf_image__.
