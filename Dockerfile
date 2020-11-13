@@ -1,20 +1,25 @@
-#using official tensorflow image
-FROM tensorflow/tensorflow:latest-gpu-py3-jupyter
+FROM tensorflow/tensorflow:latest-gpu
 
-RUN pip install --upgrade pip
+ARG TORCH_VERSION=1.7.0
+ARG TORCHVISION_VERSION=0.8.1
+ARG TORCHAUDIO_VERSION=0.7.0
+ARG TORCH_CUDA_VERSION=cu101
 
-RUN apt-get update && apt-get install -y \
-	 python-opencv \
-	cython
-RUN pip install jupyterlab
+RUN python3 -m pip install --no-cache-dir \
+    jupyterlab \
+    torch==${TORCH_VERSION}+${TORCH_CUDA_VERSION} \
+    torchvision==${TORCHVISION_VERSION}+${TORCH_CUDA_VERSION} \
+    torchaudio===${TORCHAUDIO_VERSION} \
+    -f https://download.pytorch.org/whl/torch_stable.html \
+    opencv-python \
+    Cython \
+    pandas \
+    scipy \
+    sklearn \
+    Pillow \
+    nbimporter \
+    --upgrade pip
 
-#install all necessary libraries such as pandas, PIL etc..
-ADD requirements.txt .
-RUN mkdir ./notebooks
-RUN pip install -r requirements.txt
-
-#open Jupter notebook port
 EXPOSE 8888
 
-#allow for all IP range
-CMD jupyter lab --allow-root --no-browser --port 8888 --ip 0.0.0.0 --NotebookApp.token=''
+CMD jupyter-lab --allow-root --no-browser --port 8888 --ip 0.0.0.0 --NotebookApp.token=''
