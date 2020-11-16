@@ -5,6 +5,9 @@ ARG TORCHVISION_VERSION=0.8.1
 ARG TORCHAUDIO_VERSION=0.7.0
 ARG TORCH_CUDA_VERSION=cu101
 
+RUN apt-get update && apt-get install -y \
+	python-opencv
+
 RUN python3 -m pip install --no-cache-dir \
     jupyterlab \
     torch==${TORCH_VERSION}+${TORCH_CUDA_VERSION} \
@@ -18,6 +21,7 @@ RUN python3 -m pip install --no-cache-dir \
     sklearn \
     Pillow \
     nbimporter \
+    matplotlib \
     --upgrade pip
 
 EXPOSE 8888
