@@ -5,6 +5,8 @@ ARG TORCHVISION_VERSION=0.8.1
 ARG TORCHAUDIO_VERSION=0.7.0
 ARG TORCH_CUDA_VERSION=cu101
 
+ARG TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 RUN apt-get update && apt-get install -y \
 	python-opencv
 
